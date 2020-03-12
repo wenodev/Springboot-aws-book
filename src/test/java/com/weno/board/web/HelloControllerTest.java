@@ -37,9 +37,8 @@ public class HelloControllerTest {
 
         mvc.perform(
                 get("/hello/dto")
-                    .param("name", name)
-                    .param("amount", String.valueOf(amount)))
-                .andExpect(status().isOk())
+                    .param("name",name)
+                    .param("amount",String.valueOf(amount)))
                 .andExpect(jsonPath("$.name", is(name)))
                 .andExpect(jsonPath("$.amount", is(amount)));
 
