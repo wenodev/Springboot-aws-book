@@ -2,6 +2,7 @@ package com.weno.board.service.posts;
 
 import com.weno.board.domain.posts.Posts;
 import com.weno.board.domain.posts.PostsRepository;
+import com.weno.board.web.dto.PostsListResponseDto;
 import com.weno.board.web.dto.PostsResponseDto;
 import com.weno.board.web.dto.PostsSaveRequestDto;
 import com.weno.board.web.dto.PostsUpdateRequestDto;
@@ -9,6 +10,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.List;
+import java.util.stream.Collectors;
 
 
 @RequiredArgsConstructor
@@ -39,4 +42,12 @@ public class PostsService {
 
         return new PostsResponseDto(entity);
     }
+
+    @Transactional
+    public List<PostsListResponseDto> findAllDesc(){
+        return postsRepository.findAllDesc().stream()
+                .map(PostsListResponseDto::new)
+                .collect(Collectors.toList());
+    }
+
 }
