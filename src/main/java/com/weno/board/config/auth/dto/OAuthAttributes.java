@@ -46,6 +46,8 @@ public class OAuthAttributes {
                 .build();
     }
 
+    // git test 0504
+
     private static OAuthAttributes ofNaver(String userNameAttributeName, Map<String, Object> attributes) {
         Map<String, Object> response = (Map<String, Object>) attributes.get("response");
 
