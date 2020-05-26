@@ -26,7 +26,7 @@ repositories {
 
 dependencies {
     testCompile("org.springframework.security:spring-security-test")
-//    compile('org.mariadb.jdbc:mariadb-java-client')
+    compile('org.mariadb.jdbc:mariadb-java-client')
     compile('org.springframework.session:spring-session-jdbc')
     compile('org.springframework.boot:spring-boot-starter-oauth2-client')
     compile('org.springframework.boot:spring-boot-starter-mustache')
